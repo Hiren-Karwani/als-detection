@@ -1,18 +1,11 @@
-
-# Core data and ML
-pandas>=1.5
-numpy>=1.24
-scikit-learn>=1.2
-xgboost>=1.7
-joblib>=1.2
-
-# Web / UI
-streamlit>=1.20
-plotly>=5.14
-
-# Visualization
-seaborn>=0.12
-matplotlib>=3.6
-
-# Optional / utilities
-pathlib2; python_version < '3.4'
+numpy
+pandas
+scikit-learn
+xgboost
+joblib
+streamlit
+librosa
+soundfile
+matplotlib
+plotly
+tensorflow
