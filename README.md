@@ -216,7 +216,6 @@ When you download results, the CSV includes:
 
 **Owner**: Hiren-Karwani  
 **Repository**: [als-detection](https://github.com/Hiren-Karwani/als-detection)  
-**License**: [Specify if applicable]
 
 ## Citation
 
