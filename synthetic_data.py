@@ -1,10 +1,9 @@
-
 # synthetic_data.py
 import pandas as pd
 import numpy as np
 from pathlib import Path
 
-def main(orig="Minsk2020_ALS_dataset.csv", out="synthetic_univariate_10000_ALS.csv", n_per_class=5000):
+def main(orig="synthetic_univariate_10000_ALS.csv", out="synthetic_ALS.csv", n_per_class=5000):
     p = Path(orig)
     if not p.exists():
         raise FileNotFoundError("Original dataset not found in working directory.")
@@ -21,8 +20,18 @@ def main(orig="Minsk2020_ALS_dataset.csv", out="synthetic_univariate_10000_ALS.c
         rows = {}
         for col in class_df.columns:
             if np.issubdtype(class_df[col].dtype, np.number):
-                m = class_df[col].mean()
-                s = class_df[col].std() if np.nanstd(class_df[col])>0 else 0.0
+                vals = class_df[col].dropna().to_numpy()
+                if vals.size == 0:
+                    m = np.nan
+                    s = 0.0
+                else:
+                    m = float(np.nanmean(vals))
+                    # avoid computing std when there is <=1 observation to prevent
+                    # runtime warnings and NaN std. Use ddof=0 and guard by count.
+                    if vals.size <= 1:
+                        s = 0.0
+                    else:
+                        s = float(np.nanstd(vals, ddof=0))
                 if s == 0 or np.isnan(s):
                     rows[col] = np.full(n, m)
                 else:

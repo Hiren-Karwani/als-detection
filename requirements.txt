@@ -3,9 +3,12 @@ pandas
 scikit-learn
 xgboost
 joblib
-streamlit
 librosa
 soundfile
+scipy
 matplotlib
 plotly
 tensorflow
+Flask
+werkzeug
+lightgbm
