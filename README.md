@@ -1,3 +1,14 @@
+# Final Year Group Project Members:-
+
+Hiren Karwani   
+
+Vidhit Navani
+
+Vedant Navani
+
+Hainy Chugria
+
+
 # 🧬 ALS Risk Assessment Platform
 
 An AI-powered web application for early detection and risk stratification of Amyotrophic Lateral Sclerosis (ALS) using voice biomarkers and acoustic features.
